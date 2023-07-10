@@ -13,6 +13,6 @@ public interface LoanRepository extends JpaRepository<Loan, Integer> {
     Loan findLast(String telephone);
 
     @Modifying
-    @Query("delete from Loan l where l.balance < 1 and l.timestamp <= ?1")
-    void deleteOldClearedLoans(long start);
+    @Query("delete from Loan l where l.balance < 1")
+    void deleteOldClearedLoans();
 }
